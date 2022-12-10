@@ -1,6 +1,11 @@
 import { createStore } from "redux";
 
-const initialState = { counter: 0, showCounter: true };
+interface IState {
+    counter: number;
+    showCounter: boolean;
+}
+
+const initialState: IState = { counter: 0, showCounter: true };
 
 const counterReducer = (state = initialState, action) => {
     console.log(
