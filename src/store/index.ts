@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { AnyAction, createStore } from "redux";
 
 interface IState {
     counter: number;
@@ -7,13 +7,8 @@ interface IState {
 
 const initialState: IState = { counter: 0, showCounter: true };
 
-const counterReducer = (state = initialState, action) => {
-    console.log(
-        "hola entrando en counterReducer. counter:",
-        initialState.counter,
-        "showCounter:",
-        initialState.showCounter
-    );
+const counterReducer = (state = initialState, action: AnyAction) => {
+    
     if (action.type === "increment") {
         return {
             counter: state.counter + 1,
