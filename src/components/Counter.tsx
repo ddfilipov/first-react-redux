@@ -1,10 +1,12 @@
 import classes from "./Counter.module.css";
 import { useSelector, useDispatch } from "react-redux";
+import { FC } from "react";
+import { IState } from "../store";
 
-const Counter = () => {
+export const Counter: FC = () => {
     const dispatch = useDispatch();
-    const counter = useSelector((state) => state.counter);
-    const showCounter = useSelector((state) => state.showCounter);
+    const counter: number = useSelector((state: IState) => state.counter);
+    const showCounter: boolean = useSelector((state: IState) => state.showCounter);
 
     const incrementHandler = () => {
         dispatch({ type: "increment" });
@@ -36,5 +38,3 @@ const Counter = () => {
         </main>
     );
 };
-
-export default Counter;
