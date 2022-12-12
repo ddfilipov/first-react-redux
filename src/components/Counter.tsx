@@ -24,7 +24,6 @@ export const Counter: FC = () => {
         dispatch({ type: "toggle" });
     };
 
-    console.log("show counter:", showCounter);
     return (
         <main className={classes.counter}>
             <h1>Redux Counter</h1>
